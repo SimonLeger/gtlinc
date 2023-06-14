@@ -1,0 +1,256 @@
+header {
+    width: 70vw;
+    margin: auto;
+    margin-top: 3rem;
+}
+main {
+    width: 75vw;
+    margin: auto;
+}
+footer {
+    width: 50vw;
+    margin: auto;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+li {
+    margin-left: 1vw;
+    list-style-type: square;
+}
+p {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+h1 {
+    color: rgb(0, 40, 0);
+}
+h2 {
+    color: rgb(0, 60, 0);
+} 
+h3 {
+    color: rgb(0, 80, 0);
+}
+h4 {
+    color: rgb(0, 100, 0);
+}
+h5 {
+    color: rgb(0, 120, 0);
+} 
+
+
+.main-title {
+    text-align: center;
+}
+.secondary-title {
+    position: relative;
+    left: 6rem;
+    text-align: center;
+}
+
+.division-link-title {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.division-link {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(247, 247, 247);
+    display: block;
+}
+.division-link:hover {
+    text-decoration: none;
+    color: rgb(214, 196, 27);
+    background-color: rgb(231, 231, 231);
+}
+
+.communication-link {
+    text-decoration: none;
+}
+
+.divisions {
+    width: 65vw;
+    margin: auto;
+    font-size: 125%;
+}
+
+.division-text {
+    text-align: justify;
+}
+
+.division-image {
+    width: 100%;
+}
+
+.top-link {
+    width: 75px;
+    position: fixed;
+    bottom: 50px;
+    right: 5vw;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 8pt;
+    }
+    .division-link-title, .communication-link, .division-title {
+        font-size: 10pt;
+    }
+    h1 {
+        font-size: 20pt;
+    }
+    h2 {
+        font-size: 18pt;
+    } 
+    h3 {
+        font-size: 16pt;
+    }
+    h4 {
+        font-size: 14pt;
+    }
+    h5 {
+        font-size: 12pt;
+    } 
+    #divisions-links-small {
+        visibility: visible;
+        display: flex;
+    }
+    #divisions-links-big {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    body {
+        font-size: 10pt;
+    }
+    .division-link-title, .communication-link {
+        font-size: 12pt;
+    }
+    h1 {
+        font-size: 22pt;
+    }
+    h2, .division-title {
+        font-size: 20pt;
+    } 
+    h3 {
+        font-size: 18pt;
+    }
+    h4 {
+        font-size: 16pt;
+    }
+    h5 {
+        font-size: 1pt;
+    } 
+    #divisions-links-small {
+        visibility: visible;
+        display: flex;
+    }
+    #divisions-links-big {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 12pt;
+    }
+    .division-link-title, .communication-link, .division-title {
+        font-size: 14pt;
+    }
+    h1 {
+        font-size: 18pt;
+    }
+    h2 {
+        font-size: 17pt;
+    } 
+    h3 {
+        font-size: 16pt;
+    }
+    h4 {
+        font-size: 15pt;
+    }
+    h5 {
+        font-size: 14pt;
+    } 
+    #divisions-links-small {
+        visibility: visible;
+        display: flex;
+    }
+    #divisions-links-big {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {
+        font-size: 14pt;
+    }
+    .division-link-title, .communication-link, .division-title {
+        font-size: 16pt;
+    }
+    h1 {
+        font-size: 20pt;
+    }
+    h2 {
+        font-size: 19pt;
+    } 
+    h3 {
+        font-size: 18pt;
+    }
+    h4 {
+        font-size: 17pt;
+    }
+    h5 {
+        font-size: 16pt;
+    }
+    #divisions-links-small {
+        visibility: visible;
+        display: flex;
+    }
+    #divisions-links-big {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body {
+        font-size: 16pt;
+    }
+    .division-link-title, .communication-link, .division-title {
+        font-size: 18pt;
+    }
+    h1 {
+        font-size: 22pt;
+    }
+    h2 {
+        font-size: 21pt;
+    } 
+    h3 {
+        font-size: 20pt;
+    }
+    h4 {
+        font-size: 19pt;
+    }
+    h5 {
+        font-size: 18pt;
+    }
+    #divisions-links-small {
+        visibility: hidden;
+        display: none;
+    }
+    #divisions-links-big {
+        visibility: visible;
+        display: flex;
+    }
+}
