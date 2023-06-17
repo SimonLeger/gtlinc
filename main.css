@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&display=swap');
 
-header {
-    width: 70vw;
-    margin: auto;
-    margin-top: 3rem;
+.heading-image {
+    width: 100%;
+}
+.heading-text {
+    position: absolute;
+    top: 500px;
+    font-size: 50pt;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 main {
     width: 75vw;
@@ -53,11 +58,15 @@ h5 {
 
 .main-title {
     text-align: center;
+    color: rgb(0, 79, 0);
+    font-family: 'Outfit', sans-serif;
 }
 .secondary-title {
     position: relative;
     left: 6rem;
     text-align: center;
+    color: white;
+    font-family: 'Outfit', sans-serif;
 }
 
 .division-link-title {
@@ -132,6 +141,15 @@ h5 {
         visibility: hidden;
         display: none;
     }
+    .heading-text {
+        top: 80px;
+    }
+    .main-title {
+        font-size: 20pt;
+    }
+    .secondary-title {
+        font-size: 15pt;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -164,6 +182,15 @@ h5 {
     #divisions-links-big {
         visibility: hidden;
         display: none;
+    }
+    .heading-text {
+        top: 120px;
+    }
+    .main-title {
+        font-size: 22pt;
+    }
+    .secondary-title {
+        font-size: 15pt;
     }
 }
 
@@ -198,6 +225,15 @@ h5 {
         visibility: hidden;
         display: none;
     }
+    .heading-text {
+        top: 170px;
+    }
+    .main-title {
+        font-size: 25pt;
+    }
+    .secondary-title {
+        font-size: 20pt;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -231,6 +267,15 @@ h5 {
         visibility: hidden;
         display: none;
     }
+    .heading-text {
+        top: 170px;
+    }
+    .main-title {
+        font-size: 25pt;
+    }
+    .secondary-title {
+        font-size: 20pt;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -263,6 +308,26 @@ h5 {
     #divisions-links-big {
         visibility: visible;
         display: flex;
+    }
+    .heading-text {
+        top: 170px;
+    }
+    .main-title {
+        font-size: 25pt;
+    }
+    .secondary-title {
+        font-size: 20pt;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    .heading-text {
+        top: 30%;
+    }
+    .main-title {
+        font-size: 40pt;
+    }
+    .secondary-title {
+        font-size: 30pt;
     }
 }
 
