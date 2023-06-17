@@ -15,6 +15,7 @@ footer {
     margin: auto;
     padding-top: 5rem;
     padding-bottom: 5rem;
+    text-align: center;
 }
 
 li {
@@ -264,7 +265,6 @@ h5 {
         display: flex;
     }
 }
-
 
 body {
     -webkit-animation-delay: 0.1s;
