@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&display=swap');
+
 header {
     width: 70vw;
     margin: auto;
@@ -8,7 +11,7 @@ main {
     margin: auto;
 }
 footer {
-    width: 50vw;
+    width: 75vw;
     margin: auto;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -17,26 +20,33 @@ footer {
 li {
     margin-left: 1vw;
     list-style-type: square;
+    font-family: 'Abel', sans-serif;
 }
 p {
     margin-left: 1vw;
     margin-right: 1vw;
+    font-family: 'Abel', sans-serif;
 }
 
 h1 {
     color: rgb(0, 40, 0);
+    font-family: 'Outfit', sans-serif;
 }
 h2 {
     color: rgb(0, 60, 0);
+    font-family: 'Outfit', sans-serif;
 } 
 h3 {
     color: rgb(0, 80, 0);
+    font-family: 'Outfit', sans-serif;
 }
 h4 {
     color: rgb(0, 100, 0);
+    font-family: 'Outfit', sans-serif;
 }
 h5 {
     color: rgb(0, 120, 0);
+    font-family: 'Outfit', sans-serif;
 } 
 
 
@@ -95,7 +105,7 @@ h5 {
     body {
         font-size: 8pt;
     }
-    .division-link-title, .communication-link, .division-title {
+    .division-link-title, .communication-link, .division-title, .division-subtitle {
         font-size: 10pt;
     }
     h1 {
@@ -128,7 +138,7 @@ h5 {
     body {
         font-size: 10pt;
     }
-    .division-link-title, .communication-link {
+    .division-link-title, .communication-link, .division-title, .division-subtitle {
         font-size: 12pt;
     }
     h1 {
@@ -161,7 +171,7 @@ h5 {
     body {
         font-size: 12pt;
     }
-    .division-link-title, .communication-link, .division-title {
+    .division-link-title, .communication-link, .division-title, .division-subtitle {
         font-size: 14pt;
     }
     h1 {
@@ -194,7 +204,7 @@ h5 {
     body {
         font-size: 14pt;
     }
-    .division-link-title, .communication-link, .division-title {
+    .division-link-title, .communication-link, .division-title, .division-subtitle {
         font-size: 16pt;
     }
     h1 {
@@ -227,7 +237,7 @@ h5 {
     body {
         font-size: 16pt;
     }
-    .division-link-title, .communication-link, .division-title {
+    .division-link-title, .communication-link, .division-title, .division-subtitle {
         font-size: 18pt;
     }
     h1 {
