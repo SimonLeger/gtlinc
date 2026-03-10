@@ -23,30 +23,73 @@
             <div class="secondary-title">Fondée en 2002</div>
         </div>
     </header>
+    <nav class="site-nav">
+
+        <!-- 50% — Qui sommes nous? -->
+        <a href="#modal-about" class="site-nav-col site-nav-col--left">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="8" stroke-width="3"/>
+                <line x1="12" y1="12" x2="12" y2="16"/>
+            </svg>
+            Qui sommes nous?
+        </a>
+
+        <!-- 25% — Social icons -->
+        <div class="site-nav-col site-nav-col--center">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="site-nav-icon" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="site-nav-icon" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+            </a>
+            <a href="mailto:info@gtlinc.ca" class="site-nav-icon" aria-label="Courriel">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <polyline points="2,4 12,13 22,4"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- 25% — FAQ -->
+        <a href="#modal-faq" class="site-nav-col site-nav-col--right">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3"/>
+            </svg>
+            FAQ
+        </a>
+
+    </nav>
     <main>
-        <div id="divisions" class="divisions">
-            <div class="py-5 px-4 mt-5" id="division1">
-                <div class="row align-items-center d-flex mb-3">
-                    <h3 class="col">À Propos</h3>
-                    <a class="communication-link col text-end" href="mailto:info@gtlinc.ca">info@gtlinc.ca</a>
-                </div>
-                <div class="division-content row">
-                    <div class="division-text col-12 mt-3">
-                        <p>Groupe Touzel Leger Inc. (GTL) est une entreprise qui œuvre dans le domaine des services professionnels de développement économique depuis 2002. </p>
-                        <p>En tant qu’entrepreneurs, nous sommes toujours à l’affût de nouvelles opportunités d’affaires permettant de nous développer et d’élargir notre gamme de services en fonction des tendances et des perspectives économiques du marché. </p>
-                        
-                        <p>Nos secteurs d’activités dans le domaine des services professionnels:</p>
-                        <ul>
-                            <li>Développement économique</li>
-                            <li>Services Informatiques (Architecture technologique)</li>
-                            <li>Services Informatiques (Développement Web)</li>
-                        </ul>
-                        <p>Notre but est de vous offrir le meilleur service en portant une attention toute particulière à vos besoins et aux détails. Votre satisfaction demeure notre priorité !</p>
-                    </div>
-                </div>
-                <h3>N'hésitez pas à communiquer avec nous pour en savoir davantage sur nos services.</h3>
-            </div>
-        <a href="#top"><img src="images/icons/arrow-up.svg" alt="retour en haut" class="top-link"></a>
+        <div class="zones-grid">
+            <a href="#zone-modal-1" class="zone-card">
+                <img src="images/main/zone1.jpg" alt="Service de débroussaillage">
+                <div class="zone-card-title">Service de débroussaillage</div>
+            </a>
+
+            <a href="#zone-modal-2" class="zone-card">
+                <img src="images/main/zone2.jpg" alt="Service de reconditionnement">
+                <div class="zone-card-title">Service de reconditionnement d'entrée ou chemin de gravel</div>
+            </a>
+
+            <a href="#zone-modal-3" class="zone-card">
+                <img src="images/main/zone3.jpg" alt="Service d'entretien paysager">
+                <div class="zone-card-title">Service d'entretien paysager</div>
+            </a>
+
+            <a href="#zone-modal-4" class="zone-card">
+                <img src="images/main/zone4.jpg" alt="Services spécialisés">
+                <div class="zone-card-title">Services spécialisés</div>
+            </a>
+        </div>
     </main>
     <footer>
         <div class="row text-center">
@@ -55,5 +98,71 @@
             <p class="col">GTL inc 2026</p>
         </div>
     </footer>
+
+    <div id="zone-modal-1" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#" class="modal-close" aria-label="Fermer">✕</a>
+            <img src="images/main/zone1.jpg" alt="Service de débroussaillage image" class="modal-image">
+            <h3>Service de débroussaillage</h3>
+            <p>Remplacez ce texte par votre description.</p>
+        </div>
+    </div>
+
+    <div id="zone-modal-2" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#" class="modal-close" aria-label="Fermer">✕</a>
+            <img src="images/main/zone2.jpg" alt="Service de reconditionnement d'entrée ou chemin de gravel image" class="modal-image">
+            <h3>Service de reconditionnement d'entrée ou chemin de gravel</h3>
+            <p>Remplacez ce texte par votre description.</p>
+        </div>
+    </div>
+
+    <div id="zone-modal-3" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#" class="modal-close" aria-label="Fermer">✕</a>
+            <img src="images/main/zone3.jpg" alt="Service d'entretien paysager image" class="modal-image">
+            <h3>Service d'entretien paysager</h3>
+            <p>Remplacez ce texte par votre description.</p>
+        </div>
+    </div>
+
+    <div id="zone-modal-4" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#" class="modal-close" aria-label="Fermer">✕</a>
+            <img src="images/main/zone4.jpg" alt="Services spécialisés image" class="modal-image">
+            <h3>Services spécialisés</h3>
+            <p>Remplacez ce texte par votre description.</p>
+        </div>
+    </div>
+    <div id="modal-about" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#" class="modal-close" aria-label="Fermer">✕</a>
+            <div class="modal-header-bar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="8" stroke-width="3"/>
+                    <line x1="12" y1="12" x2="12" y2="16"/>
+                </svg>
+                <h3>À propos</h3>
+            </div>
+            <p>Groupe Touzel Leger Inc. (GTL) est une entreprise qui œuvre dans le domaine des services professionnels depuis 2002.</p>
+            <p>Remplacez ce texte par votre contenu.</p>
+        </div>
+    </div>
+
+    <div id="modal-faq" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#" class="modal-close" aria-label="Fermer">✕</a>
+            <div class="modal-header-bar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3"/>
+                </svg>
+                <h3>FAQ</h3>
+            </div>
+            <p>Remplacez ce texte par vos questions fréquentes.</p>
+        </div>
+    </div>
 </body>
 </html>

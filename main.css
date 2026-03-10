@@ -1,17 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&display=swap');
 
-body {
-    background-color: antiquewhite;
-}
-
-/* ── HEADER FIX ──────────────────────────────────────────────────────────────
-   Previously used position:absolute + a fixed `top` pixel value, which broke
-   badly on ctrl+scroll zoom (the pixel value doesn't scale with the image).
-   Now the header is a flex container and the text is centred with percentage-
-   based positioning + transform, so it always sits in the middle of the image
-   regardless of zoom level or viewport width.
-   ─────────────────────────────────────────────────────────────────────────── */
 header {
     position: relative;
     display: flex;
@@ -20,7 +9,7 @@ header {
 }
 .heading-image {
     width: 100%;
-    display: block;   /* removes the small gap browsers add under inline images */
+    display: block;
 }
 .heading-text {
     position: absolute;
@@ -28,9 +17,103 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 90%;       /* keeps long titles from overflowing on narrow screens */
+    width: 90%;
     pointer-events: none;
 }
+.main-title {
+    text-align: center;
+    color: rgb(0, 79, 0);
+    font-family: 'Outfit', sans-serif;
+}
+.secondary-title {
+    text-align: center;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ── NAVBAR ───────────────────────────────────────────────────────────────── */
+
+.site-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    background-color: rgb(0, 50, 0);
+    border-bottom: 3px solid rgb(214, 196, 27);
+}
+
+.site-nav-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    font-family: 'Abel', sans-serif;
+    font-size: 1.3rem;              /* ↑ bigger base size */
+    letter-spacing: 0.04em;
+    color: rgb(210, 230, 210);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.site-nav-col svg {
+    width: 1.15em;
+    height: 1.15em;
+    flex-shrink: 0;
+}
+
+a.site-nav-col:hover {
+    color: rgb(214, 196, 27);
+    border-bottom-color: rgb(214, 196, 27);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Left column: centred */
+.site-nav-col--left {
+    justify-content: center;        /* centred */
+    font-size: 1.3rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Centre column: icon cluster */
+.site-nav-col--center {
+    gap: 0.25rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Right column: centred */
+.site-nav-col--right {
+    justify-content: center;        /* centred */
+    font-size: 1.3rem;
+}
+
+/* Individual social icon buttons */
+.site-nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.6rem;
+    color: rgb(210, 230, 210);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.site-nav-icon svg {
+    width: 1.3em;
+    height: 1.3em;
+}
+
+.site-nav-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.site-nav-icon[aria-label="Facebook"]:hover   { color: rgb(100, 180, 255); }
+.site-nav-icon[aria-label="Instagram"]:hover  { color: rgb(240, 120, 180); }
+.site-nav-icon[aria-label="Courriel"]:hover   { color: rgb(214, 196, 27);  }
+
+/* ── LAYOUT ───────────────────────────────────────────────────────────────── */
 
 main {
     width: 75vw;
@@ -45,180 +128,204 @@ footer {
     text-align: center;
 }
 
-li {
-    margin-left: 1vw;
-    list-style-type: square;
-    font-family: 'Abel', sans-serif;
-}
+/* ── TYPOGRAPHY ───────────────────────────────────────────────────────────── */
+
 p {
-    margin-left: 1vw;
-    margin-right: 1vw;
     font-family: 'Abel', sans-serif;
 }
 
-h1 { color: rgb(0, 40, 0);  font-family: 'Outfit', sans-serif; }
-h2 { color: rgb(0, 60, 0);  font-family: 'Outfit', sans-serif; }
-h3 { color: rgb(0, 80, 0);  font-family: 'Outfit', sans-serif; }
-h4 { color: rgb(0, 100, 0); font-family: 'Outfit', sans-serif; }
-h5 { color: rgb(0, 120, 0); font-family: 'Outfit', sans-serif; }
+/* ── ZONE GRID ────────────────────────────────────────────────────────────── */
 
-.main-title {
-    text-align: center;
-    color: rgb(0, 79, 0);
-    font-family: 'Outfit', sans-serif;
+.zones-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 2rem;
 }
-.secondary-title {
-    text-align: center;         /* was position:relative + left:6rem — removed */
+
+@media only screen and (max-width: 768px) {
+    .zones-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── ZONE CARD ────────────────────────────────────────────────────────────── */
+
+.zone-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgb(0, 83, 0);
+}
+.zone-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.zone-card:hover img {
+    transform: scale(1.04);
+    opacity: 0.85;
+}
+.zone-card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.6rem 1rem;
+    background: linear-gradient(transparent, rgba(0, 40, 0, 0.85));
     color: white;
     font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+.zone-card:hover .zone-card-title {
+    background: linear-gradient(transparent, rgba(0, 60, 0, 0.95));
 }
 
-.division-link-title {
-    font-weight: bold;
-    margin-bottom: 0;
+/* ── MODALS ───────────────────────────────────────────────────────────────── */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
-.division-link {
-    text-decoration: none;
-    color: black;
-    background-color: rgb(247, 247, 247);
+.modal-overlay:target {
+    display: flex;
+}
+.modal-box {
+    position: relative;
+    background: white;
+    max-width: 560px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+.modal-image {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
     display: block;
 }
-.division-link:hover {
+.modal-header-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1rem 0.5rem;
+    border-bottom: 2px solid rgb(214, 196, 27);
+    margin-bottom: 0.75rem;
+}
+.modal-header-bar svg {
+    width: 1.4em;
+    height: 1.4em;
+    color: rgb(0, 80, 0);
+    flex-shrink: 0;
+}
+.modal-box h3 {
+    margin: 0;
+    color: rgb(0, 80, 0);
+    font-family: 'Outfit', sans-serif;
+}
+.modal-box > h3 {
+    margin: 1rem 1rem 0.5rem;
+}
+.modal-box p {
+    margin: 0 1rem 1.5rem;
+}
+.modal-close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.8rem;
+    font-size: 1.3rem;
+    line-height: 1;
     text-decoration: none;
-    color: rgb(214, 196, 27);
-    background-color: rgb(231, 231, 231);
+    color: black;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+.modal-close:hover {
+    color: rgb(255, 0, 0);
 }
 
-.communication-link {
-    text-decoration: none;
+/* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
+
+@media only screen and (max-width: 540px) {
+    /* Switch from 3 unequal columns to a single full-width flex row */
+    .site-nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    /* All columns share space equally */
+    .site-nav-col {
+        flex: 1;
+        justify-content: center;
+        padding: 0.7rem 0;
+        border-right: none;
+        font-size: 0;           /* hide text labels — px units below prevent icons shrinking too */
+    }
+
+    /* px units are unaffected by font-size: 0 */
+    .site-nav-col svg,
+    .site-nav-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Spread the 3 social icons evenly within their column */
+    .site-nav-col--center {
+        flex: 1;
+        justify-content: space-evenly;
+        gap: 0;
+    }
 }
 
-.divisions {
-    width: 65vw;
-    margin: auto;
-    font-size: 125%;
-}
-
-.division-text {
-    text-align: justify;
-}
-
-.division-image {
-    width: 100%;
-}
-
-/* ── TOP-LINK (back-to-top arrow) FIX ───────────────────────────────────────
-   Using vw/vh units instead of px means the arrow scales proportionally when
-   the user ctrl+scrolls, rather than appearing huge.  max-width caps it so it
-   never dominates the screen on very large monitors.
-   ─────────────────────────────────────────────────────────────────────────── */
-.top-link {
-    width: clamp(40px, 5vw, 75px);  /* fluid: shrinks on mobile, caps at 75px */
-    position: fixed;
-    bottom: 4vh;
-    right: 4vw;
-}
-
-/* ── RESPONSIVE TYPOGRAPHY ──────────────────────────────────────────────────
-   Font sizes are defined per breakpoint as before; the heading-text position
-   no longer needs per-breakpoint overrides because it uses percentage layout.
-   ─────────────────────────────────────────────────────────────────────────── */
-
-/* Extra small – phones (≤ 600 px) */
 @media only screen and (max-width: 600px) {
-    body { font-size: 8pt; }
-    .division-link-title, .communication-link,
-    .division-title, .division-subtitle { font-size: 10pt; }
-    h1 { font-size: 20pt; }
-    h2 { font-size: 18pt; }
-    h3 { font-size: 16pt; }
-    h4 { font-size: 14pt; }
-    h5 { font-size: 12pt; }
-    #divisions-links-small { visibility: visible; display: flex; }
-    #divisions-links-big   { visibility: hidden;  display: none; }
+    body             { font-size: 8pt; }
     .main-title      { font-size: 20pt; }
     .secondary-title { font-size: 15pt; }
 }
-
-/* Small – portrait tablets / large phones (≥ 600 px) */
 @media only screen and (min-width: 600px) {
-    body { font-size: 10pt; }
-    .division-link-title, .communication-link,
-    .division-title, .division-subtitle { font-size: 12pt; }
-    h1 { font-size: 22pt; }
-    h2, .division-title { font-size: 20pt; }
-    h3 { font-size: 18pt; }
-    h4 { font-size: 16pt; }
-    h5 { font-size: 1pt; }
-    #divisions-links-small { visibility: visible; display: flex; }
-    #divisions-links-big   { visibility: hidden;  display: none; }
+    body             { font-size: 10pt; }
     .main-title      { font-size: 22pt; }
     .secondary-title { font-size: 15pt; }
 }
-
-/* Medium – landscape tablets (≥ 768 px) */
 @media only screen and (min-width: 768px) {
-    body { font-size: 12pt; }
-    .division-link-title, .communication-link,
-    .division-title, .division-subtitle { font-size: 14pt; }
-    h1 { font-size: 18pt; }
-    h2 { font-size: 17pt; }
-    h3 { font-size: 16pt; }
-    h4 { font-size: 15pt; }
-    h5 { font-size: 14pt; }
-    #divisions-links-small { visibility: visible; display: flex; }
-    #divisions-links-big   { visibility: hidden;  display: none; }
+    body             { font-size: 12pt; }
     .main-title      { font-size: 25pt; }
     .secondary-title { font-size: 20pt; }
 }
-
-/* Large – laptops / desktops (≥ 992 px) */
 @media only screen and (min-width: 992px) {
-    body { font-size: 14pt; }
-    .division-link-title, .communication-link,
-    .division-title, .division-subtitle { font-size: 16pt; }
-    h1 { font-size: 20pt; }
-    h2 { font-size: 19pt; }
-    h3 { font-size: 18pt; }
-    h4 { font-size: 17pt; }
-    h5 { font-size: 16pt; }
-    #divisions-links-small { visibility: visible; display: flex; }
-    #divisions-links-big   { visibility: hidden;  display: none; }
+    body             { font-size: 14pt; }
     .main-title      { font-size: 25pt; }
     .secondary-title { font-size: 20pt; }
 }
-
-/* Extra large – large laptops / desktops (≥ 1200 px) */
 @media only screen and (min-width: 1200px) {
-    body { font-size: 16pt; }
-    .division-link-title, .communication-link,
-    .division-title, .division-subtitle { font-size: 18pt; }
-    h1 { font-size: 22pt; }
-    h2 { font-size: 21pt; }
-    h3 { font-size: 20pt; }
-    h4 { font-size: 19pt; }
-    h5 { font-size: 18pt; }
-    #divisions-links-small { visibility: hidden;  display: none; }
-    #divisions-links-big   { visibility: visible; display: flex; }
+    body             { font-size: 16pt; }
     .main-title      { font-size: 25pt; }
     .secondary-title { font-size: 20pt; }
 }
-
-/* Wide screens (≥ 1600 px) */
 @media only screen and (min-width: 1600px) {
     .main-title      { font-size: 40pt; }
     .secondary-title { font-size: 30pt; }
 }
 
-/* Webkit font-rendering flash fix */
+/* ── FONT RENDERING FIX ───────────────────────────────────────────────────── */
+
 body {
-    -webkit-animation-delay: 0.1s;
-    -webkit-animation-name: fontfix;
-    -webkit-animation-duration: 0.1s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: linear;
+    animation: fontfix 0.1s linear;
 }
-@-webkit-keyframes fontfix {
+@keyframes fontfix {
     from { opacity: 1; }
     to   { opacity: 1; }
 }
